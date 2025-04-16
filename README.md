@@ -32,3 +32,5 @@ docker build -t divine_machines
 
 - Vintage - Количество дней, в течение которых Клиент был связан с компанией.
 
+**Сссылка на набор данных (Kaggle):**
+https://www.kaggle.com/competitions/playground-series-s4e7/data?select=train.csv
