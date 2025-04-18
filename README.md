@@ -1,15 +1,10 @@
 # Divine_machines <br>
 
 ## Запуск
-Для запуска используйте следующие команды в терминале:
-```
-python model_api.py
-streamlit run streamlit_for_inference_with_api.py
-```
 
-Для создания образа(image) в Docker используйте команду:
+Используйте Docker, написав в терминале:
 ```
-docker build -t divine_machines   
+docker compose up
 ```
 
 ## Модель
