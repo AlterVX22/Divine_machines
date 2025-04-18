@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  our-api:
+    build:
+      context: .
+      dockerfile: our-api/Dockerfile
+    image: our-api:latest
+    container_name: our-api
+    ports:
+      - "5100:5100"
+    volumes:
+      - ./our-api/lgb_BEST.pkl:/app/lgb_BEST.pkl
+
+  streamlit-web:
+    build:
+      context: .
+      dockerfile: streamlit-service/Dockerfile
+    image: streamlit-service:latest
+    container_name: streamlit-service
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./streamlit-service/streamlit_inference_with_api.py:/app/streamlit_inference_with_api.py

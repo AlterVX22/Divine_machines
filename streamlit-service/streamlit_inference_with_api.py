@@ -4,8 +4,9 @@ import requests
 
  
 def predict_model(data):
-    url = 'http://127.0.0.1:5100/predict_model' # Ссылка на пост-запрос к API модельки
-    
+    ip_api = "our-api"
+    port_api = "5100"
+
     dct_data = {
         'Age': data[0],
         'Driving_License': data[1],
@@ -19,7 +20,7 @@ def predict_model(data):
         'Policy_Sales_Channel': data[9]
     }
  
-    response = requests.post(url, json=dct_data) # Делаем пост-запрос в формате json по ссылке
+    response = requests.post(f"http://{ip_api}:{port_api}/predict_model", json=dct_data)
     
     if response.status_code == 200: # Если всее отработало ништяк
         return response.json()
